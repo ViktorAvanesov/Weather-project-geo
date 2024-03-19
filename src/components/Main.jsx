@@ -9,22 +9,21 @@ const api = {
 
   export const Main = () => {
 
-    // действия при изменении города в поле ввода
+    
     const [city, setCity] = useState('');
 
-    // действия с данными погоды
     const [weather, setWeather] = useState({});
 
     function getUrl() {
     return `${api.base}?lat=${latitude}&lon=${longitude}&dt=${Date.now()}&appid=${api.key}`;   
     }
   
-    // обработчик, который срабатывает когда нажата клавиша Enter
+    
     const search = evt => {
       if (evt.key === 'Enter') {
-        fetch(getUrl()) // отправляем запрос
-          .then(res => res.json())  // ответ преобразуем в json
-          .then(result => {         // работа с результатом
+        fetch(getUrl()) 
+          .then(res => res.json())  
+          .then(result => {         
             setWeather(result);
             setCity('');
             console.log(result);
@@ -32,7 +31,7 @@ const api = {
       }
     }
   
-    // форматирование даты
+   
     const format_date = (d) => {
       let months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
       let days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
@@ -69,7 +68,7 @@ const api = {
       }
     }
   
-    // JSX разметка
+  
     return (
 <>
       <div>
