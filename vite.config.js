@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base : "/weather-project-geo",
+  base : "/Weather-project-geo",
   plugins: [react()],
 })
